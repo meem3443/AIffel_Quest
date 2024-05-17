@@ -1,0 +1,30 @@
+def reverseString(s) :
+  # 주어진 문자열을 뒤집어서 반환하는 함수
+  # 문자열을 역순으로 가져와 reversedWord에 저장합니다.
+  reversedWord = ''  # 뒤집어진 단어를 저장하는 변수입니다.
+  slicingNum = -1  # 한 단어씩 가져와야 하기 때문에 번호를 지정합니다.
+  for i in range(len(originalWord)):
+      reversedWord += originalWord[slicingNum]
+      print('reversedWord  1 :', reversedWord)
+      slicingNum -= 1
+  return reversedWord
+
+def isPalindrome(s) :
+  # 주어진 문자열이 회문인지 확인하는 함수
+  reversedWord = reverseString(s)
+  return s == reversedWord
+
+# 문자열 입력 받기
+originalWord = input("회문확인을 위한 문자열을 입력하세요: ")  # 입력을 받습니다.
+
+reversedWord = reverseString(originalWord)
+# 뒤집힌 단어 출력
+print('뒤집힌 단어는:', reversedWord)
+
+# 회문 여부 판단 및 출력
+if isPalindrome(originalWord):
+    print('입력한 문자열은 회문입니다.')
+else:
+    print('입력한 문자열은 회문이 아닙니다.')
+
+#회고 : 김진서 잘못된 개념을 오용하여 의도대로 작동하지 않게 되었다. 새로운 개념을 알아가는 것이 아닌 잘못된 개념을 바로잡는 시간이였음.
